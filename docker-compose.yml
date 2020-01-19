@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  truffle:
+    build: 
+      context: ./truffle/
+      dockerfile: Dockerfile
+    volumes:
+      - ./truffle:/usr/src/app
+    command: sh -c "cd client && yarn start"
+    ports:
+      - "8002:3000"
+
